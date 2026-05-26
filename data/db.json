@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": "user-123",
+      "name": "Utilisateur Test",
+      "email": "user@example.com",
+      "password": "password",
+      "role": "user"
+    },
+    {
+      "id": "admin-1",
+      "name": "Admin Reservia",
+      "email": "admin@reservia.fr",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+  "destinations": [
+    {
+      "id": "1",
+      "name": "Paris",
+      "country": "France",
+      "image": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=800&q=80",
+      "price": 350,
+      "description": "La ville de l'amour et de la lumière.",
+      "longDescription": "Découvrez Paris, ses monuments emblématiques comme la Tour Eiffel, et sa gastronomie raffinée.",
+      "availableDates": [
+        "2026-06-15",
+        "2026-07-20",
+        "2026-08-10"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tokyo",
+      "country": "Japon",
+      "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80",
+      "price": 1200,
+      "description": "Une métropole vibrante entre tradition et modernité.",
+      "longDescription": "Plongez dans l'effervescence de Tokyo. Visitez des temples millénaires et des quartiers ultra-modernes.",
+      "availableDates": [
+        "2026-09-01",
+        "2026-10-10",
+        "2026-11-05"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Bali",
+      "country": "Indonésie",
+      "image": "https://images.unsplash.com/photo-1537996191371-5b128522e864?auto=format&fit=crop&w=800&q=80",
+      "price": 850,
+      "description": "L'île des dieux, un paradis tropical.",
+      "longDescription": "Profitez des plages de sable fin, des rizières en terrasses et de la culture spirituelle de Bali.",
+      "availableDates": [
+        "2026-05-10",
+        "2026-07-05",
+        "2026-09-15"
+      ]
+    },
+    {
+      "id": "dest1779806112066",
+      "name": "Toucoing",
+      "country": "France",
+      "price": 49,
+      "image": "/api/medias/dest_1779806112063.gif",
+      "description": "Meilleure ville de l'univers",
+      "longDescription": "",
+      "availableDates": []
+    }
+  ],
+  "bookings": [
+    {
+      "destinationId": "1",
+      "date": "2026-06-15",
+      "guests": 2,
+      "totalPrice": 700,
+      "id": "iohwq0k41",
+      "userId": "user-123"
+    }
+  ]
+}
