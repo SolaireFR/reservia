@@ -1,0 +1,13 @@
+services:
+    mongo:
+        container_name: mongo-reservia
+        image: mongo:latest
+        restart: unless-stopped
+        volumes:
+            - /data/db:/data/db
+        ports:
+            - '27017:27017'
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: db_reservia
+            MONGO_INITDB_ROOT_PASSWORD: IVT7148dta
+            MONGO_INITDB_DATABASE: ${MONGO_DB}
