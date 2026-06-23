@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
 import { createBooking, getUserBookings, cancelBooking } from '../../../utils/services/booking.service';
+import { cookies } from 'next/headers';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const booking = await createBooking(body);
+    const cookieStore = await cookies();
+    const userId = cookieStore.get('reservia_session')?.value;
+    if (!userId) return NextResponse.json({ error: 'Non authentifié' }, { status: 401 });
+
+    const booking = await createBooking(body, userId);
     return NextResponse.json(booking, { status: 201 });
   } catch (error) {
     return NextResponse.json({ error: 'Erreur lors de la réservation' }, { status: 500 });
@@ -12,8 +17,10 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
-  // Simulate get bookings for logged in user
-  const userId = "user-123";
+  const cookieStore = await cookies();
+  const userId = cookieStore.get('reservia_session')?.value;
+  if (!userId) return NextResponse.json([], { status: 200 });
+
   const bookings = await getUserBookings(userId);
   return NextResponse.json(bookings);
 }

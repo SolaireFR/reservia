@@ -9,18 +9,18 @@ export interface Booking {
   totalPrice: number;
 }
 
-export async function createBooking(data: Omit<Booking, "id" | "userId">): Promise<Booking> {
+export async function createBooking(data: Omit<Booking, "id" | "userId">, userId: string): Promise<Booking> {
   const db = await readDB();
-  
+
   const newBooking: Booking = {
     ...data,
     id: Math.random().toString(36).substr(2, 9),
-    userId: "user-123" // Simulate logged in user
+    userId
   };
-  
+
   db.bookings.push(newBooking);
   await writeDB(db);
-  
+
   return newBooking;
 }
 

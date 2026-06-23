@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import BookingForm from "./BookingForm";
 import { getDestinationById } from "@/utils/services/destination.service";
+import ManageDates from './ManageDates';
 
 // Force Dynamic (SSR) to ensure we always get up-to-date pricing and date availability
 export const dynamic = 'force-dynamic';
@@ -40,6 +41,7 @@ export default async function DestinationDetailPage({ params }: { params: { id: 
           </div>
 
           <BookingForm destination={dest} />
+          <ManageDates destinationId={dest.id} initialDates={dest.availableDates || []} />
         </div>
       </div>
     </div>
