@@ -1,6 +1,7 @@
 import { MongoClient, Db } from 'mongodb';
 import { Booking } from './booking.service';
 import { Destination } from './destination.service';
+export const dynamic = 'force-dynamic';
 
 export interface User {
   id: string;
